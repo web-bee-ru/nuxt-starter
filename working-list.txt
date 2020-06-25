@@ -326,11 +326,11 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
 | | | `-- picomatch@2.2.2
 | | `-- semver@6.3.0
 | `-- typescript@3.8.3
-`-- nuxt@2.13.0
-  +-- @nuxt/builder@2.13.0
+`-- nuxt@2.13.1
+  +-- @nuxt/builder@2.13.1
   | +-- @nuxt/devalue@1.2.4
   | | `-- consola@2.13.0 deduped
-  | +-- @nuxt/utils@2.13.0
+  | +-- @nuxt/utils@2.13.1
   | | +-- consola@2.13.0 deduped
   | | +-- fs-extra@8.1.0 deduped
   | | +-- hash-sum@2.0.0 deduped
@@ -342,7 +342,7 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
   | | +-- serialize-javascript@4.0.0 deduped
   | | +-- signal-exit@3.0.3
   | | `-- ua-parser-js@0.7.21
-  | +-- @nuxt/vue-app@2.13.0
+  | +-- @nuxt/vue-app@2.13.1
   | | +-- node-fetch@2.6.0 deduped
   | | +-- unfetch@4.1.0
   | | +-- vue@2.6.11
@@ -355,7 +355,7 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
   | | | +-- de-indent@1.0.2
   | | | `-- he@1.2.0 deduped
   | | `-- vuex@3.4.0
-  | +-- @nuxt/webpack@2.13.0 deduped
+  | +-- @nuxt/webpack@2.13.1 deduped
   | +-- chalk@3.0.0
   | | +-- ansi-styles@4.2.1
   | | | +-- @types/color-name@1.1.1
@@ -406,9 +406,9 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
   | | `-- randombytes@2.1.0
   | |   `-- safe-buffer@5.2.1
   | `-- upath@1.2.0
-  +-- @nuxt/cli@2.13.0
-  | +-- @nuxt/config@2.13.0
-  | | +-- @nuxt/utils@2.13.0 deduped
+  +-- @nuxt/cli@2.13.1
+  | +-- @nuxt/config@2.13.1
+  | | +-- @nuxt/utils@2.13.1 deduped
   | | +-- consola@2.13.0 deduped
   | | +-- create-require@1.0.2 deduped
   | | +-- defu@2.0.4 deduped
@@ -418,7 +418,7 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
   | | +-- jiti@0.1.11 deduped
   | | +-- rc9@1.0.0 deduped
   | | `-- std-env@2.2.1 deduped
-  | +-- @nuxt/utils@2.13.0 deduped
+  | +-- @nuxt/utils@2.13.1 deduped
   | +-- boxen@4.2.0
   | | +-- ansi-align@3.0.0
   | | | `-- string-width@3.1.0
@@ -536,7 +536,7 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
   |   | `-- strip-ansi@6.0.0 deduped
   |   `-- strip-ansi@6.0.0
   |     `-- ansi-regex@5.0.0
-  +-- @nuxt/components@1.0.3
+  +-- @nuxt/components@1.0.5
   | +-- chalk@4.1.0
   | | +-- ansi-styles@4.2.1
   | | | +-- @types/color-name@1.1.1 deduped
@@ -572,13 +572,13 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
   | | `-- slash@3.0.0
   | +-- lodash@4.17.15 deduped
   | `-- semver@7.3.2 deduped
-  +-- @nuxt/core@2.13.0
-  | +-- @nuxt/config@2.13.0 deduped
+  +-- @nuxt/core@2.13.1
+  | +-- @nuxt/config@2.13.1 deduped
   | +-- @nuxt/devalue@1.2.4 deduped
-  | +-- @nuxt/server@2.13.0
-  | | +-- @nuxt/config@2.13.0 deduped
-  | | +-- @nuxt/utils@2.13.0 deduped
-  | | +-- @nuxt/vue-renderer@2.13.0 deduped
+  | +-- @nuxt/server@2.13.1
+  | | +-- @nuxt/config@2.13.1 deduped
+  | | +-- @nuxt/utils@2.13.1 deduped
+  | | +-- @nuxt/vue-renderer@2.13.1 deduped
   | | +-- @nuxtjs/youch@4.2.3
   | | | +-- cookie@0.3.1
   | | | +-- mustache@2.3.2
@@ -604,10 +604,10 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
   | | | `-- defu@1.0.0
   | | +-- serve-static@1.14.1 deduped
   | | `-- server-destroy@1.0.1
-  | +-- @nuxt/utils@2.13.0 deduped
-  | +-- @nuxt/vue-renderer@2.13.0
+  | +-- @nuxt/utils@2.13.1 deduped
+  | +-- @nuxt/vue-renderer@2.13.1
   | | +-- @nuxt/devalue@1.2.4 deduped
-  | | +-- @nuxt/utils@2.13.0 deduped
+  | | +-- @nuxt/utils@2.13.1 deduped
   | | +-- consola@2.13.0 deduped
   | | +-- fs-extra@8.1.0 deduped
   | | +-- lru-cache@5.1.1
@@ -641,8 +641,8 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
   | +-- hable@3.0.0 deduped
   | +-- hash-sum@2.0.0 deduped
   | `-- std-env@2.2.1 deduped
-  +-- @nuxt/generator@2.13.0
-  | +-- @nuxt/utils@2.13.0 deduped
+  +-- @nuxt/generator@2.13.1
+  | +-- @nuxt/utils@2.13.1 deduped
   | +-- chalk@3.0.0 deduped
   | +-- consola@2.13.0 deduped
   | +-- fs-extra@8.1.0 deduped
@@ -659,9 +659,9 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
   | | | `-- no-case@2.3.2 deduped
   | | +-- relateurl@0.2.7
   | | `-- uglify-js@3.10.0
-  | `-- node-html-parser@1.2.19
+  | `-- node-html-parser@1.2.20
   |   `-- he@1.1.1
-  +-- @nuxt/loading-screen@2.0.0
+  +-- @nuxt/loading-screen@2.0.1
   | +-- connect@3.7.0 deduped
   | +-- defu@2.0.4
   | +-- get-port-please@1.0.0
@@ -750,7 +750,7 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
   | | `-- flat@5.0.0
   | |   `-- is-buffer@2.0.4
   | `-- std-env@2.2.1 deduped
-  `-- @nuxt/webpack@2.13.0
+  `-- @nuxt/webpack@2.13.1
     +-- @babel/core@7.10.3
     | +-- @babel/code-frame@7.10.3 deduped
     | +-- @babel/generator@7.10.3
@@ -811,14 +811,14 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
     | | `-- path-parse@1.0.6
     | +-- semver@5.7.1
     | `-- source-map@0.5.7
-    +-- @nuxt/babel-preset-app@2.13.0
+    +-- @nuxt/babel-preset-app@2.13.1
     | +-- @babel/core@7.10.3 deduped
     | +-- @babel/helper-compilation-targets@7.10.2
     | | +-- @babel/compat-data@7.10.3
-    | | | +-- browserslist@4.12.0 deduped
+    | | | +-- browserslist@4.12.1 deduped
     | | | +-- invariant@2.2.4 deduped
     | | | `-- semver@5.7.1
-    | | +-- browserslist@4.12.0 deduped
+    | | +-- browserslist@4.12.1 deduped
     | | +-- invariant@2.2.4
     | | | `-- loose-envify@1.4.0
     | | |   `-- js-tokens@4.0.0 deduped
@@ -1039,9 +1039,9 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
     | | | +-- @babel/types@7.10.3 deduped
     | | | `-- esutils@2.0.3
     | | +-- @babel/types@7.10.3 deduped
-    | | +-- browserslist@4.12.0 deduped
+    | | +-- browserslist@4.12.1 deduped
     | | +-- core-js-compat@3.6.5
-    | | | +-- browserslist@4.12.0 deduped
+    | | | +-- browserslist@4.12.1 deduped
     | | | `-- semver@7.0.0
     | | +-- invariant@2.2.4 deduped
     | | +-- levenary@1.1.1 deduped
@@ -1086,7 +1086,7 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
     |   +-- is-fullwidth-code-point@2.0.0
     |   `-- strip-ansi@4.0.0
     |     `-- ansi-regex@3.0.0
-    +-- @nuxt/utils@2.13.0 deduped
+    +-- @nuxt/utils@2.13.1 deduped
     +-- babel-loader@8.1.0
     | +-- find-cache-dir@2.1.0
     | | +-- commondir@1.0.1
@@ -1112,14 +1112,13 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
     | |   `-- find-up@4.1.0
     | |     +-- locate-path@5.0.0
     | |     | `-- p-locate@4.1.0
-    | |     |   `-- p-limit@2.3.0
-    | |     |     `-- p-try@2.2.0
+    | |     |   `-- p-limit@2.3.0 deduped
     | |     `-- path-exists@4.0.0
     | +-- loader-utils@1.4.0 deduped
     | +-- mkdirp@0.5.5 deduped
     | +-- neo-async@2.6.1
     | `-- schema-utils@2.7.0 deduped
-    +-- caniuse-lite@1.0.30001087
+    +-- caniuse-lite@1.0.30001088
     +-- chalk@3.0.0 deduped
     +-- consola@2.13.0 deduped
     +-- css-loader@3.6.0
@@ -1174,7 +1173,7 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
     | | | +-- postcss-selector-parser@6.0.2 deduped
     | | | `-- postcss-value-parser@4.1.0 deduped
     | | +-- postcss-colormin@4.0.3
-    | | | +-- browserslist@4.12.0 deduped
+    | | | +-- browserslist@4.12.1 deduped
     | | | +-- color@3.1.2
     | | | | +-- color-convert@1.9.3 deduped
     | | | | `-- color-string@1.5.3
@@ -1201,17 +1200,17 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
     | | | +-- postcss@7.0.32 deduped
     | | | +-- postcss-value-parser@3.3.1
     | | | `-- stylehacks@4.0.3
-    | | |   +-- browserslist@4.12.0 deduped
+    | | |   +-- browserslist@4.12.1 deduped
     | | |   +-- postcss@7.0.32 deduped
     | | |   `-- postcss-selector-parser@3.1.2
     | | |     +-- dot-prop@5.2.0 deduped
     | | |     +-- indexes-of@1.0.1 deduped
     | | |     `-- uniq@1.0.1 deduped
     | | +-- postcss-merge-rules@4.0.3
-    | | | +-- browserslist@4.12.0 deduped
+    | | | +-- browserslist@4.12.1 deduped
     | | | +-- caniuse-api@3.0.0
-    | | | | +-- browserslist@4.12.0 deduped
-    | | | | +-- caniuse-lite@1.0.30001087 deduped
+    | | | | +-- browserslist@4.12.1 deduped
+    | | | | +-- caniuse-lite@1.0.30001088 deduped
     | | | | +-- lodash.memoize@4.1.2
     | | | | `-- lodash.uniq@4.5.0 deduped
     | | | +-- cssnano-util-same-parent@4.0.1
@@ -1238,7 +1237,7 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
     | | | `-- postcss-value-parser@3.3.1
     | | +-- postcss-minify-params@4.0.2
     | | | +-- alphanum-sort@1.0.2
-    | | | +-- browserslist@4.12.0 deduped
+    | | | +-- browserslist@4.12.1 deduped
     | | | +-- cssnano-util-get-arguments@4.0.0 deduped
     | | | +-- postcss@7.0.32 deduped
     | | | +-- postcss-value-parser@3.3.1
@@ -1276,7 +1275,7 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
     | | | +-- postcss@7.0.32 deduped
     | | | `-- postcss-value-parser@3.3.1
     | | +-- postcss-normalize-unicode@4.0.1
-    | | | +-- browserslist@4.12.0 deduped
+    | | | +-- browserslist@4.12.1 deduped
     | | | +-- postcss@7.0.32 deduped
     | | | `-- postcss-value-parser@3.3.1
     | | +-- postcss-normalize-url@4.0.1
@@ -1292,7 +1291,7 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
     | | | +-- postcss@7.0.32 deduped
     | | | `-- postcss-value-parser@3.3.1
     | | +-- postcss-reduce-initial@4.0.3
-    | | | +-- browserslist@4.12.0 deduped
+    | | | +-- browserslist@4.12.1 deduped
     | | | +-- caniuse-api@3.0.0 deduped
     | | | +-- has@1.0.3 deduped
     | | | `-- postcss@7.0.32 deduped
@@ -1405,12 +1404,7 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
     | | | | `-- p-defer@1.0.0
     | | | `-- mimic-fn@3.0.0
     | | +-- pkg-up@3.1.0
-    | | | `-- find-up@3.0.0
-    | | |   `-- locate-path@3.0.0
-    | | |     +-- p-locate@3.0.0
-    | | |     | `-- p-limit@2.3.0
-    | | |     |   `-- p-try@2.2.0
-    | | |     `-- path-exists@3.0.0 deduped
+    | | | `-- find-up@3.0.0 deduped
     | | `-- tapable@1.1.3 deduped
     | `-- webpack-sources@1.4.3
     |   +-- source-list-map@2.0.1
@@ -1437,8 +1431,7 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
     | | `-- find-up@3.0.0
     | |   `-- locate-path@3.0.0
     | |     +-- p-locate@3.0.0
-    | |     | `-- p-limit@2.3.0
-    | |     |   `-- p-try@2.2.0
+    | |     | `-- p-limit@2.3.0 deduped
     | |     `-- path-exists@3.0.0
     | +-- rimraf@2.7.1
     | | `-- glob@7.1.6 deduped
@@ -1589,26 +1582,20 @@ vue-ts@1.0.0 C:\Dev\tmp\vue-ts
     |   +-- ajv-errors@1.0.1 deduped
     |   `-- ajv-keywords@3.5.0 deduped
     +-- postcss-preset-env@6.7.0
-    | +-- autoprefixer@9.8.2
-    | | +-- browserslist@4.12.0 deduped
-    | | +-- caniuse-lite@1.0.30001087 deduped
-    | | +-- kleur@4.0.1
+    | +-- autoprefixer@9.8.4
+    | | +-- browserslist@4.12.1 deduped
+    | | +-- caniuse-lite@1.0.30001088 deduped
+    | | +-- colorette@1.2.0
     | | +-- normalize-range@0.1.2
     | | +-- num2fraction@1.2.2
     | | +-- postcss@7.0.32 deduped
     | | `-- postcss-value-parser@4.1.0 deduped
-    | +-- browserslist@4.12.0
-    | | +-- caniuse-lite@1.0.30001087 deduped
-    | | +-- electron-to-chromium@1.3.481
-    | | +-- node-releases@1.1.58
-    | | `-- pkg-up@2.0.0
-    | |   `-- find-up@2.1.0
-    | |     `-- locate-path@2.0.0
-    | |       +-- p-locate@2.0.0
-    | |       | `-- p-limit@1.3.0
-    | |       |   `-- p-try@1.0.0
-    | |       `-- path-exists@3.0.0 deduped
-    | +-- caniuse-lite@1.0.30001087 deduped
+    | +-- browserslist@4.12.1
+    | | +-- caniuse-lite@1.0.30001088 deduped
+    | | +-- electron-to-chromium@1.3.482
+    | | +-- escalade@3.0.1
+    | | `-- node-releases@1.1.58
+    | +-- caniuse-lite@1.0.30001088 deduped
     | +-- css-blank-pseudo@0.1.4
     | | `-- postcss@7.0.32 deduped
     | +-- css-has-pseudo@0.10.0
