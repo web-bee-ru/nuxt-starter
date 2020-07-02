@@ -5,9 +5,9 @@
 # TypeScript and known issues
 
 1. SFC should be annotated with `<script lang="ts">`.
-2. Named exports from SFC are not supported
+2. Named exports from SFC are not supported.
     - See https://github.com/vuejs/vue-loader/issues/1281
-3. Typechecking and autocomplete do not work inside template section
+3. Typechecking and autocomplete do not work inside template section.
     - Waiting for https://github.com/znck/vue-developer-experience
 
 # Prettier & EditorConfig
