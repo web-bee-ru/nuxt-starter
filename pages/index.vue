@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, getCurrentInstance, useMeta } from 'nuxt-composition-api';
-  import { default as Test } from '~/components/Test.vue';
+  import { defineComponent } from 'nuxt-composition-api';
+  import Test from '~/components/Test.vue';
   import { Item } from '~/types';
 
   export default defineComponent({

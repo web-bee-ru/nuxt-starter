@@ -22,10 +22,8 @@
       content: { type: [Array, Object] as PropType<Item | Item[]> },
       formatter: { type: [Function] as PropType<(item: Item) => string> },
     },
-    setup(props) {
+    setup() {
       const count = ref(0);
-
-      const n: number = props.wtf;
 
       const increment = () => {
         count.value += 1;
