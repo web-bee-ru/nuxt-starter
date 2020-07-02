@@ -1,4 +1,3 @@
 export default {
-  // mode: 'spa',
-  // buildModules: ['@nuxt/typescript-build'],
+  buildModules: ['@nuxt/typescript-build', 'nuxt-composition-api'],
 };
