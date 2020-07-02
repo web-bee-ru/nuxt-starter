@@ -1,21 +1,22 @@
 <template>
   <div>
-    <Test :initialCounter="2" :str="'abc'" :record="record" />
+    <Test :record="record" />
   </div>
 </template>
 
 <script lang="ts">
   import { defineComponent } from '@vue/composition-api';
-  import Test from '~/components/Test.vue';
+  import { default as Test } from '~/components/Test.vue';
+  import { Record } from '~/types';
 
   export default defineComponent({
     components: { Test },
     setup() {
-      return {
-        record: {
-          firstName: 'Denis',
-        },
+      const record: Record = {
+        firstName: 'John',
+        lastName: 'Goodman',
       };
+      return { record };
     },
   });
 </script>

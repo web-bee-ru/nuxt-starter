@@ -1,25 +1,20 @@
 <template>
   <div>
-    <span>Hello, {{ record.firstName }}</span>
-    <button @click="increment()">{{ count }}</button>
+    <span>Hello, {{ record.firstName }} {{ record.lastName }}!</span>
+    <button @click="increment()">Clicked {{ count }}</button>
   </div>
 </template>
 
 <script lang="ts">
   import { ref, defineComponent, PropType } from '@vue/composition-api';
-
-  export type Record = {
-    firstName: string;
-    lastName: string;
-  };
+  import { Record } from '~/types';
 
   export default defineComponent({
     props: {
-      initialCounter: { type: Number, required: true },
       record: { type: Object as PropType<Record>, required: true },
     },
     setup(props) {
-      const count = ref(props.initialCounter);
+      const count = ref(0);
 
       const increment = () => {
         count.value += 1;
