@@ -1,22 +1,25 @@
 <template>
   <div>
-    <Test :record="record" />
+    <Test :item="item" />
   </div>
 </template>
 
 <script lang="ts">
-  import { defineComponent } from '@vue/composition-api';
+  import { defineComponent, getCurrentInstance, useMeta } from 'nuxt-composition-api';
   import { default as Test } from '~/components/Test.vue';
-  import { Record } from '~/types';
+  import { Item } from '~/types';
 
   export default defineComponent({
     components: { Test },
+    data() {
+      return { b: 2 };
+    },
     setup() {
-      const record: Record = {
+      const item: Item = {
         firstName: 'John',
         lastName: 'Goodman',
       };
-      return { record };
+      return { item };
     },
   });
 </script>

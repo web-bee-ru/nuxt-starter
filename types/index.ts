@@ -1,4 +1,4 @@
-export type Record = {
+export type Item = {
   firstName: string;
   lastName: string;
 };
