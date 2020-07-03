@@ -1,10 +1,6 @@
 <template>
   <div>
-    <span>
-      Hello,
-      <template v-if="item">{{ item.firstName }} {{ item.lastName }}!</template>
-      <template v-else>stranger!</template>
-    </span>
+    <span>{{ greetings }}</span>
     <button @click="increment()">Clicked {{ count }}</button>
   </div>
 </template>
@@ -21,6 +17,15 @@
       ids: { type: Array as PropType<number[]> },
       content: { type: [Array, Object] as PropType<Item | Item[]> },
       formatter: { type: [Function] as PropType<(item: Item) => string> },
+    },
+    computed: {
+      greetings(): string {
+        if (this.item) {
+          return `Hello, ${this.item.firstName} ${this.item.lastName}!`;
+        } else {
+          return `Hello, stranger!`;
+        }
+      },
     },
     setup() {
       const count = ref(0);

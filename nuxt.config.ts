@@ -1,6 +1,6 @@
-import { Configuration } from '@nuxt/types';
+import { NuxtConfig } from '@nuxt/types';
 
-const config: Configuration = {
+const config: NuxtConfig = {
   buildModules: ['@nuxt/typescript-build', 'nuxt-composition-api'],
 };
 

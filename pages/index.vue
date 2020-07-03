@@ -9,9 +9,15 @@
   import Test from '~/components/Test.vue';
   import { Item } from '~/types';
 
-  export default defineComponent({
+  type AsyncData = {
+    b: number;
+  };
+  export default defineComponent<AsyncData>({
     components: { Test },
     data() {
+      return { a: 2 };
+    },
+    asyncData(): AsyncData {
       return { b: 2 };
     },
     setup() {
