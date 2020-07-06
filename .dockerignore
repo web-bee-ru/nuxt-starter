@@ -1,5 +1,6 @@
-# Secrets
-/.env
+# Common
+/.git
+/.idea
 
 # Build artifacts
 /.nuxt

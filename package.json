@@ -1,24 +1,29 @@
 {
-  "name": "vue-ts",
+  "name": "nuxt-ts-starter",
+  "private": true,
   "version": "1.0.0",
   "description": "Nuxt starter project",
   "main": "index.js",
   "scripts": {
-    "dev": "nuxt-ts",
-    "lint": "eslint --ext .ts,.js,.vue ."
+    "dev": "nuxt-ts dev -c nuxt.config.ts",
+    "build": "nuxt-ts build -c nuxt.config.ts && tsc nuxt.config.ts",
+    "start": "nuxt start -c nuxt.config.js",
+    "lint": "prettier --check . && eslint --ext .ts,.js,.vue .",
+    "lint:fix": "prettier --write . && eslint --fix --ext .ts,.js,.vue ."
   },
   "license": "ISC",
   "dependencies": {
-    "@nuxt/types": "^2.13.2",
-    "@nuxt/typescript-runtime": "^0.4.10",
-    "nuxt": "^2.13.2",
+    "nuxt": "^2.13.3",
     "nuxt-composition-api": "^0.10.2",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@nuxt/types": "^2.13.3",
     "@nuxt/typescript-build": "^1.0.3",
+    "@nuxt/typescript-runtime": "^0.4.10",
     "@nuxtjs/eslint-config-typescript": "^2.0.0",
     "eslint": "^7.3.1",
-    "eslint-config-prettier": "^6.11.0"
+    "eslint-config-prettier": "^6.11.0",
+    "prettier": "^2.0.5"
   }
 }
