@@ -19,7 +19,5 @@
 //     },
 //   });
 export function withCustomFields<TCustomFields>() {
-  return function<TData>(data: TData) {
-    return data as TData & TCustomFields;
-  };
+  return <TData>(data: TData) => data as TData & TCustomFields;
 }
