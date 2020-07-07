@@ -9,7 +9,7 @@ RUN apk add --no-cache make gcc g++ python curl git
 
 # Install app dependencies
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm ci
 
 # Clean unnecessary package cache
 RUN npm cache clean --force
@@ -28,7 +28,7 @@ ENV HOST=0.0.0.0
 ENV PORT=3000
 
 # Copy source code and pre-build artifacts
-COPY . .
+COPY . ./
 
 # Build app
 RUN npm run build && npm prune --production
@@ -51,10 +51,10 @@ ENV PORT=3000
 
 # Copy the build artifacts from the build stage
 # Ordered by change frequency to benefit from docker caching
-COPY --from=build /srv/app/package.json /srv/app/package-lock.json /srv/app/node_modules ./
-COPY --from=build /srv/app/nuxt.config.js ./
-COPY --from=build /srv/app/.env ./
-COPY --from=build /srv/app/.nuxt ./
+COPY --from=builder /srv/app/package.json /srv/app/package-lock.json /srv/app/node_modules/ ./
+COPY --from=builder /srv/app/nuxt.config.js ./
+COPY --from=builder /srv/app/.env ./
+COPY --from=builder /srv/app/.nuxt ./
 
 # Start app
 CMD npm run start

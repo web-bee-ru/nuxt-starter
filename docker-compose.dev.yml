@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    image: node:14-alpine
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/home/node/app
+    working_dir: /home/node/app
+    command: npm run dev

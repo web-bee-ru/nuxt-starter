@@ -2,6 +2,10 @@
 /.git
 /.idea
 
+# Docker files
+/Dockerfile
+/.dockerignore
+
 # Build artifacts
 /.nuxt
 /dist

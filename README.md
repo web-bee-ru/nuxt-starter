@@ -79,11 +79,21 @@
       },
       ```
 
+# Developing inside Docker (optional)
+
+1. On Windows 10:
+   1. Install Docker for Windows: https://docs.docker.com/docker-for-windows/install/.
+   2. Turn on "Expose daemon on tcp://localhost:2375 without TLS" in Docker Desktop under Settings > General.
+   3. Add `.exe` extension to the end of "Docker executable" and "Docker Compose executable" in WebStorm under Settings > Build, Execution, Deployment > Docker > Tools.
+   4. Start services from `docker-compose.dev.yml`.
+2. On GNU/Linux:
+   1. @TODO.
+
 # Known issues
 
 1. Named exports from SFC are not supported, so interface types should be defined in separate `.ts` files.
    - See https://github.com/vuejs/vue-loader/issues/1281
    - Waiting for something like https://github.com/ktsn/vuetype
-2. Typechecking and autocompletion is not supported inside template section.
+2. Typechecking and autocompletion is not supported inside template section, neither in IDE nor during compilation.
    - Waiting for https://github.com/znck/vue-developer-experience
 3. Vue 2 composition API has some limitations: https://github.com/vuejs/composition-api#limitations
