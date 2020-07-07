@@ -47,7 +47,7 @@
    - In development, you can copy `.env.example` to `.env` and modify it.
    - In continuous integration, `.env` can be created programmatically.
 2. To access environmental variables, you have to whitelist them in `nuxt.config.ts`. There are two options for this:
-   1. `(public|private)RuntimeConfig` ([docs](https://nuxtjs.org/guide/runtime-config)) maps to `$config`. It only supports start-time variables.
+   1. `(public|private)RuntimeConfig` ([docs](https://nuxtjs.org/guide/runtime-config)) maps to `this.$config` and `ctx.$config`. It only supports start-time variables.
       ```
       // nuxt.config.ts
       publicRuntimeConfig: {
@@ -79,6 +79,33 @@
       },
       ```
 
+# Error handling
+
+1. Hard error renders the stack trace page in development and `views/error.html` page in production.
+   It is triggered by uncaught exception during SSR.
+   ```
+   asyncData() {
+     throw new Error('Hard error');
+   },
+   ```
+2. Soft error renders `layouts/error.vue` page.
+   It is triggered by `this.$nuxt.error`, `ctx.error` and by uncaught exception after SSR.
+
+   ```
+   asyncData(ctx) {
+     // Option 1:
+     ctx.error({ message: 'Soft error', statusCode: 500 }); // Code can be different
+
+     // Option 2:
+     ctx.error({ message: 'Soft error' }); // Default status code is 500
+
+     // Option 3:
+     ctx.error(new Error('Soft error')); // Same as above
+   },
+   ```
+
+3. @TODO: Notification error.
+
 # Developing inside Docker (optional)
 
 1. On Windows 10:
@@ -94,6 +121,6 @@
 1. Named exports from SFC are not supported, so interface types should be defined in separate `.ts` files.
    - See https://github.com/vuejs/vue-loader/issues/1281
    - Waiting for something like https://github.com/ktsn/vuetype
-2. Typechecking and autocompletion is not supported inside template section, neither in IDE nor during compilation.
+2. Typechecking and autocomplete is not supported inside template section, neither in IDE nor during compilation.
    - Waiting for https://github.com/znck/vue-developer-experience
 3. Vue 2 composition API has some limitations: https://github.com/vuejs/composition-api#limitations
