@@ -23,7 +23,7 @@
 
   export default defineComponent({
     components: { Test },
-    asyncData(): AsyncData {
+    async asyncData(ctx): Promise<AsyncData> {
       return { b: 3 };
     },
     data() {

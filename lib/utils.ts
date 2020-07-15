@@ -7,7 +7,7 @@
 //     fromAsyncData: number;
 //   };
 //   export default defineComponent({
-//     asyncData(): AsyncData {
+//     async asyncData(): Promise<AsyncData> {
 //       return {
 //         fromAsyncData: 1,
 //       };
