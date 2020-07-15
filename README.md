@@ -21,7 +21,7 @@
      });
    </script>
    ```
-2. Non-primitive props should be annotated with `PropType<T>`.
+2. Non-primitive props should be annotated with `PropOptions<T>`.
 
    ```
    props: {
@@ -31,10 +31,10 @@
      wtf: { type: null }, // Will become "any" type
 
      // Non-primitive
-     item: { type: Object as PropType<Item> },
-     ids: { type: Array as PropType<number[]> },
-     content: { type: [Array, Object] as PropType<Item | Item[]> },
-     formatter: { type: Function as PropType<(item: Item) => string> },
+     item: { type: Object } as PropOptions<Item>,
+     ids: { type: Array } as PropOptions<number[]>,
+     content: { type: [Array, Object] } as PropOptions<Item | Item[]>,
+     formatter: { type: Function } as PropOptions<(item: Item) => string>,
    },
    ```
 
