@@ -1,6 +1,6 @@
 # Nuxt starter project
 
-1. Use WebStorm 2020 or higher.
+1. Use latest WebStorm.
 2. Install dependencies: `npm i`.
 3. Start developing: `npm run dev`.
 
@@ -10,7 +10,7 @@
 2. Turn on "Automatic ESLint configuration" under Settings > Languages & Frameworks > JavaScript > Code Quality Tools > ESLint.
 3. EditorConfig is enabled by default.
 
-# TypeScript
+# TypeScript and Vue
 
 1. SFC should be annotated with `<script lang="ts">`, default export should be wrapped in `defineComponent`.
    ```
@@ -40,6 +40,15 @@
 
 3. Methods and computed properties should have explicit type annotations.
 4. Nuxt `asyncData` requires special treatment, see `withCustomFields` from `lib/utils.ts`
+
+# Rest API
+
+1. API typings are generated based on Swagger/OpenAPI provided by backend. See `generate` script inside `package.json`.
+2. Use `$taxios` instead of `$axios`. WebStorm provides auto-completion and type checking for url, body, params and query.
+   See [taxios docs](https://github.com/simplesmiler/taxios/tree/master/packages/taxios) for details.
+3. If you encounter an issue with generated types, you should:
+   - Report about Swagger/OpenAPI issue.
+   - Temporary use `$taxios.unsafe.<method>` instead of `$taxios.<method>` until Swagger/OpenAPI is fixed.
 
 # Environment variables
 
@@ -124,3 +133,4 @@
 2. Typechecking and autocomplete is not supported inside template section, neither in IDE nor during compilation.
    - Waiting for https://github.com/znck/vue-developer-experience
 3. Vue 2 composition API has some limitations: https://github.com/vuejs/composition-api#limitations
+4. WebStorm 2020.2 has an issue with augmentation of Nuxt/Vue context, see https://youtrack.jetbrains.com/issue/WEB-46669 
