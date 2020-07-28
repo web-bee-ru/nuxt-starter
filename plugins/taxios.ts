@@ -6,10 +6,6 @@ import { defineNuxtPlugin } from 'nuxt-composition-api';
 import { Taxios } from '@simplesmiler/taxios';
 import { PetStore } from '~/types/generated/PetStore';
 
-import 'vue/types/vue';
-import '@nuxt/types';
-import 'vuex/types/index';
-
 declare module 'vue/types/vue' {
   export interface Vue {
     $taxios: Taxios<PetStore>;
