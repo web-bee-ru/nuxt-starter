@@ -1,6 +1,6 @@
 # Nuxt starter project
 
-1. Use latest WebStorm.
+1. Use WebStorm 2020.1.
 2. Install dependencies: `npm i`.
 3. Start developing: `npm run dev`.
 

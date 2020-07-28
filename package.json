@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-ts-starter",
+  "name": "nuxt-starter",
   "private": true,
   "version": "1.0.0",
   "description": "Nuxt starter project",
@@ -29,6 +29,8 @@
     "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.11.0",
     "prettier": "^2.0.5",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2",
     "typescript": "^3.9.7"
   }
 }
