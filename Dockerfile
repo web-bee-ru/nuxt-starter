@@ -11,21 +11,13 @@ RUN apk add --no-cache make gcc g++ python curl git
 COPY package.json package-lock.json ./
 RUN npm ci
 
-# Clean unnecessary package cache
-RUN npm cache clean --force
-
-# Remove unnecessary build essentials
-RUN apk del make gcc g++ python
+# @NOTE: No point in cleaning up, because for the final image we start from scratch anyway
 
 
 # ========================================================================
 # Everyhing above here should change rarely to benefit from docker caching
 # ========================================================================
 
-
-# Default environment variables
-ENV HOST=0.0.0.0
-ENV PORT=3000
 
 # Copy source code and pre-build artifacts
 COPY . ./
@@ -44,10 +36,6 @@ FROM node:14-alpine
 
 # Create app directory
 WORKDIR /srv/app
-
-# Default environment variables
-ENV HOST=0.0.0.0
-ENV PORT=3000
 
 # Copy the build artifacts from the build stage
 # Ordered by change frequency to benefit from docker caching
