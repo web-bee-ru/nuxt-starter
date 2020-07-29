@@ -6,17 +6,17 @@
 </template>
 
 <script lang="ts">
-  import { ref, defineComponent, PropOptions } from 'nuxt-composition-api';
+  import { ref, defineComponent, PropType } from 'nuxt-composition-api';
   import { Item } from '~/types';
 
   export default defineComponent({
     props: {
       wtf: { type: null },
       value: { type: [Number, String] },
-      item: { type: Object } as PropOptions<Item>,
-      ids: { type: Array } as PropOptions<number[]>,
-      content: { type: [Array, Object] } as PropOptions<Item | Item[]>,
-      formatter: { type: [Function] } as PropOptions<(item: Item) => string>,
+      item: { type: Object as PropType<Item> },
+      ids: { type: Array as PropType<number[]> },
+      content: { type: [Array, Object] as PropType<Item | Item[]> },
+      formatter: { type: [Function] as PropType<(item: Item) => string> },
     },
     computed: {
       greetings(): string {
