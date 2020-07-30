@@ -1,7 +1,8 @@
 {
   "extends": "./tsconfig.base.json",
-  "include": ["./nuxt.config.ts", "./serverMiddlewares/**/*.ts", "./serverMiddlewares/**/*.js"],
+  "include": ["./src/nuxt.config.ts", "./src/server/**/*.ts", "./src/server/**/*.js"],
   "compilerOptions": {
-    "outDir": "dist"
+    "rootDir": "src",
+    "outDir": "build"
   }
 }

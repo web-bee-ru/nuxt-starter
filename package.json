@@ -5,10 +5,10 @@
   "description": "Nuxt starter project",
   "main": "index.js",
   "scripts": {
-    "dev": "nuxt-ts dev",
-    "build": "shx rm -rf dist && shx mkdir dist && tsc -p tsconfig.build.json && nuxt-ts build -c nuxt.config.ts && shx mv .nuxt dist",
-    "start": "nuxt start -c ./dist/nuxt.config.js",
-    "generate": "taxios-generate https://petstore.swagger.io/v2/swagger.json -o ./types/generated/PetStore.ts -e PetStore",
+    "dev": "nuxt-ts dev -c ./src/nuxt.config.ts",
+    "build": "shx rm -rf ./build && tsc -p ./tsconfig.build.json && nuxt-ts build -c ./src/nuxt.config.ts",
+    "start": "nuxt start -c ./build/nuxt.config.js",
+    "api:generate": "taxios-generate https://petstore.swagger.io/v2/swagger.json -o ./types/generated/PetStore.ts -e PetStore",
     "lint": "prettier --check . && eslint --ext .ts,.js,.vue .",
     "lint:fix": "prettier --write . && eslint --fix --ext .ts,.js,.vue ."
   },

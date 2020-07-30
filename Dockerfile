@@ -24,7 +24,7 @@ COPY . ./
 RUN touch .env
 
 # Build app
-RUN npm run build && npm prune --production
+RUN npm run build
 
 
 # ======================================
@@ -38,11 +38,14 @@ FROM node:14-alpine
 # Create app directory
 WORKDIR /srv/app
 
+# Install app dependencies
+COPY package.json package-lock.json ./
+RUN npm ci --production
+
 # Copy the build artifacts from the build stage
 # Ordered by change frequency to benefit from docker caching
-COPY --from=builder /srv/app/package.json /srv/app/package-lock.json ./
-COPY --from=builder /srv/app/node_modules/ ./node_modules/
-COPY --from=builder /srv/app/dist/ ./dist/
+COPY --from=builder /srv/app/build/ ./build/
+COPY --from=builder /srv/app/.nuxt/ ./.nuxt/
 COPY --from=builder /srv/app/.env ./
 
 # Start app
