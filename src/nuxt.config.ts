@@ -9,11 +9,10 @@ const PORT = process.env.PORT || 3000;
 const APP_BASE_URL = process.env.APP_ROUTER_BASE_URL || '/';
 
 const config: NuxtConfig = {
-  buildModules: ['@nuxt/typescript-build', 'nuxt-composition-api'],
+  buildModules: ['@nuxt/typescript-build', 'nuxt-composition-api', '@nuxtjs/axios'],
 
   mode: parseNuxtMode(NUXT_MODE),
 
-  // @NOTE: This is necessary due to our build goals (TS in dev, JS in build & start).
   srcDir: getNuxtConfigDir(),
 
   // @NOTE: Details: ~/server/README.md
@@ -27,11 +26,6 @@ const config: NuxtConfig = {
   router: {
     base: APP_BASE_URL,
   },
-
-  modules: [
-    // @REFERENCE: Axios configuration https://axios.nuxtjs.org/options.html#options
-    '@nuxtjs/axios',
-  ],
 
   plugins: ['~/plugins/taxios'],
 
@@ -69,7 +63,8 @@ function parseNuxtMode(raw: string | undefined): NuxtConfig['mode'] {
   throw new Error(`Unexpected NUXT_MODE value: ${JSON.stringify(raw)}. Expected 'spa', 'universal' or undefined.`);
 }
 
-// @DOC: Return relative directory from root to
+// @DOC: Return relative directory from root to the Nuxt config directory.
+//       Necessary due to our build goals (TS in dev, JS in build & start).
 function getNuxtConfigDir(): 'src' | 'build' {
   const raw = path.relative(process.cwd(), __dirname);
   if (raw === 'src' || raw === 'build') return raw;

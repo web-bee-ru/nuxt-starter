@@ -117,36 +117,29 @@
 
 # Build
 
+Features:
+- TypeScript support everywhere, including Nuxt config and server middleware.
+  Source code lives inside `./src`.
+- Production does not depend on TypeScript and other build-time dependencies.
+  TypeScript files that are not bundled by Nuxt are compiled into `./build`.
+  During start, `srcDir` is chosen based on location of Nuxt config.
+
 With Docker:
 1. Produce `.env` file (optional).
-2. Build image with `docker build` ([docs](https://docs.docker.com/engine/reference/commandline/build/)).
-3. Deliver built image to production.
-4. Use `docker-compose` ([docs](https://docs.docker.com/compose/)) or `docker run` ([docs](https://docs.docker.com/engine/reference/run/)).
+2. Build with `docker build` ([docs](https://docs.docker.com/engine/reference/commandline/build/)).
+3. Deliver docker image to production.
+3. Start with `docker-compose` ([docs](https://docs.docker.com/compose/)) or `docker run` ([docs](https://docs.docker.com/engine/reference/run/)).
 
 Without Docker:
 1. Produce `.env` file (optional).
-2. `npm ci`
-3. `npm run build`
-4. `npm prune --production`
-5. Deliver files to production:
-   - `node_modules/**`
+2. Build with `npm ci && npm run build`.
+3. Deliver files to production:
    - `build/**`
    - `.nuxt/**`
    - `.env`
    - `package.json`
    - `package-lock.json`
-6. `npm run start`
-
-### Motivation
-
-Goals:
-- Support TypeScript everywhere, including Nuxt config and server middleware
-- Production should not depend on TypeScript, everything should be precompiled to JavaScript
-
-To achieve this:
-- Application source code is inside `./src`.
-- TypeScript files that are not bundled by Nuxt are compiled into `./build`.
-- Nuxt `srcDir` is chosen based on Nuxt config location.
+4. Start with `npm ci --production && npm run start`.
 
 # Developing inside Docker (optional)
 
