@@ -11,8 +11,6 @@ RUN apk add --no-cache make gcc g++ python curl git
 COPY package.json package-lock.json ./
 RUN npm ci
 
-# @NOTE: No point in cleaning up, because for the final image we start from scratch anyway
-
 
 # ========================================================================
 # Everyhing above here should change rarely to benefit from docker caching
@@ -21,6 +19,9 @@ RUN npm ci
 
 # Copy source code and pre-build artifacts
 COPY . ./
+
+# Create blank .env file if it does not exist
+RUN touch .env
 
 # Build app
 RUN npm run build && npm prune --production
@@ -39,10 +40,10 @@ WORKDIR /srv/app
 
 # Copy the build artifacts from the build stage
 # Ordered by change frequency to benefit from docker caching
-COPY --from=builder /srv/app/package.json /srv/app/package-lock.json /srv/app/node_modules/ ./
-COPY --from=builder /srv/app/nuxt.config.js ./
+COPY --from=builder /srv/app/package.json /srv/app/package-lock.json ./
+COPY --from=builder /srv/app/node_modules/ ./node_modules/
+COPY --from=builder /srv/app/dist/ ./dist/
 COPY --from=builder /srv/app/.env ./
-COPY --from=builder /srv/app/.nuxt ./
 
 # Start app
 CMD npm run start

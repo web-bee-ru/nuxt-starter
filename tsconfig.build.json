@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": ["./nuxt.config.ts", "./serverMiddlewares/**/*.ts", "./serverMiddlewares/**/*.js"],
+  "compilerOptions": {
+    "outDir": "dist"
+  }
+}

@@ -11,6 +11,15 @@ const config: NuxtConfig = {
 
   mode: parseNuxtMode(NUXT_MODE),
 
+  // @NOTE: Necessary due to our build goals (TS in dev, JS in build & start)
+  // @NOTE: Relative to Nuxt config file, will be . for nuxt.config.ts, and ./dist for ./dist/nuxt.config.js
+  rootDir: __dirname,
+
+  serverMiddleware: [
+    // @NOTE: 1. All files necessary for server middleware should be inside `~/serverMiddlewares`.
+    //        2. Handler names should not contain extensions.
+  ],
+
   server: {
     host: HOST,
     port: PORT,

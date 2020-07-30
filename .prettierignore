@@ -1,5 +1,4 @@
 # Build artifacts
-/node_modules
-/nuxt.config.js
 /.nuxt
 /dist
+/node_modules

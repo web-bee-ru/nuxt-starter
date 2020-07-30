@@ -115,6 +115,14 @@
 
 3. @TODO: Notification error.
 
+# Build
+
+Goals:
+- Support TypeScript everywhere, including Nuxt config and server middleware
+- Production should not depend on TypeScript, everything should be precompiled to JavaScript
+
+To achieve this, `npm run build` prepares the `./dist` directory, and `npm run start` start Nuxt from this directory.
+
 # Developing inside Docker (optional)
 
 1. On Windows 10:
@@ -130,7 +138,8 @@
 1. Named exports from SFC are not supported, so interface types should be defined in separate `.ts` files.
    - See https://github.com/vuejs/vue-loader/issues/1281
    - Waiting for something like https://github.com/ktsn/vuetype
-2. Typechecking and autocomplete is not supported inside template section, neither in IDE nor during compilation.
+2. Type checking and auto-completion is not supported inside template section, neither in IDE nor during compilation.
    - Waiting for https://github.com/znck/vue-developer-experience
-3. Vue 2 composition API has some limitations: https://github.com/vuejs/composition-api#limitations
-4. WebStorm 2020.2 has an issue with augmentation of Nuxt/Vue context, see https://youtrack.jetbrains.com/issue/WEB-46669 
+3. Vue 2 composition API has some limitations: https://github.com/vuejs/composition-api#limitations.
+4. WebStorm 2020.2 has an issue with augmentation of Nuxt/Vue context, see https://youtrack.jetbrains.com/issue/WEB-46669.
+5. Vuelidate does not have Composition API + TypeScript support yet, see https://github.com/vuelidate/vuelidate/issues/684.
