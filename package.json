@@ -9,12 +9,14 @@
     "build": "shx rm -rf ./build && tsc -p ./tsconfig.build.json && nuxt-ts build -c ./src/nuxt.config.ts",
     "start": "nuxt-start -c ./build/nuxt.config.js",
     "generate:api": "taxios-generate https://petstore.swagger.io/v2/swagger.json -o ./types/generated/PetStore.ts -e PetStore",
-    "lint": "run-s lint:prettier lint:eslint",
-    "fix": "run-s fix:prettier fix:eslint",
+    "lint": "run-s lint:prettier lint:eslint lint:stylelint",
+    "fix": "run-s fix:prettier fix:eslint fix:stylelint",
     "lint:prettier": "prettier --check .",
     "fix:prettier": "prettier --write .",
     "lint:eslint": "eslint --ext .ts,.js,.vue .",
-    "fix:eslint": "eslint --ext .ts,.js,.vue . --fix"
+    "fix:eslint": "eslint --ext .ts,.js,.vue . --fix",
+    "lint:stylelint": "stylelint ./**/*.vue ./**/*.[s]css",
+    "fix:stylelint": "stylelint ./**/*.vue ./**/*.[s]css --fix"
   },
   "license": "ISC",
   "dependencies": {
@@ -40,6 +42,11 @@
     "sass": "^1.26.10",
     "sass-loader": "^9.0.2",
     "shx": "^0.3.2",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.18.0",
     "typescript": "^3.9.7"
   }
 }
