@@ -43,16 +43,6 @@ const config: NuxtConfig = {
     // Example: `DEBUG_ENABLED: process.env.DEBUG_ENABLED || 'false'`,
   },
 
-  build: {
-    templates: [
-      // @NOTE: This is needed to override Nuxt hard error page
-      {
-        src: 'src/views/error.html',
-        dst: 'views/error.html',
-      },
-    ],
-  },
-
   css: ['~/assets/main.scss'],
 };
 
