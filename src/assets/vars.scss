@@ -1,0 +1,12 @@
+// @DOC: Project wide SCSS functions, variables and mixins. You can use them from Vue components, and other style files.
+// @EXAMPLE:
+//   <style lang="scss" scoped>
+//     @use '~@/assets/vars' as vars;
+//     .text {
+//       color: vars.$primary;
+//     }
+//   </style>
+
+$primary: #278433;
+$accent: #ff9908;
+$secondary: #e8e8e8;

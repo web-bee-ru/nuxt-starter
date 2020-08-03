@@ -41,6 +41,26 @@
 3. Methods and computed properties should have explicit type annotations.
 4. Nuxt `asyncData` requires special treatment, see `withCustomFields` from `lib/utils.ts`
 
+# Styles
+
+1. Starter project comes with Bootstrap 4. You can remove it if you don't need it,
+   or use as an example of how to add another framework.
+2. Project-wide styles go to `~/assets/main.scss`.
+3. Inside SCSS files and style sections, refer to other files as:
+   - `~@/assets/...` for project files.
+   - `~bootstrap/...` for files from `node_modules`.
+4. Inside SFC, prefer `@use` with namespaces instead of `@import`.
+   ```
+   <style lang="scss" scoped>
+     @use "~@/assets/vars" as vars;
+     @use "~@/assets/plugins/bootstrap/vars" as bvars;
+     .text {
+       color: vars.$primary;
+       background-color: bvars.$gray-100;
+     }
+   </style>
+   ```
+
 # Rest API
 
 1. API typings are generated based on Swagger/OpenAPI provided by backend. See `generate:api` script inside `package.json`.

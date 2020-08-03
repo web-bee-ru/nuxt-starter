@@ -1,7 +1,7 @@
 <template>
   <div>
     <span>{{ greetings }}</span>
-    <button @click="increment()">Clicked {{ count }}</button>
+    <button class="btn btn-sm btn-primary" @click="increment()">Clicked {{ count }}</button>
   </div>
 </template>
 

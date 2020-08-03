@@ -1,0 +1,6 @@
+// @DOC: Project wide styles.
+
+@use './vars' as vars;
+@use './plugins/bootstrap/vars' as bvars;
+
+@import './plugins/bootstrap';

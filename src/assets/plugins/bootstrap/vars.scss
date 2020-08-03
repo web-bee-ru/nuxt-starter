@@ -1,0 +1,46 @@
+// @DOC: Bootstrap specific project wide SCSS functions, variables and mixins. You can use them from Vue components, and other style files.
+//       For a full list of Bootstrap variables see node_modules/bootstrap/scss/_variables.scss.
+// @REFERENCE: https://getbootstrap.com/docs/4.5/getting-started/theming/
+// @EXAMPLE:
+//   <style lang="scss" scoped>
+//     @use '~@/assets/plugins/bootstrap/vars' as bvars;
+//     .text {
+//       color: bvars.$primary;
+//     }
+//   </style>
+
+@use '~@/assets/vars' as vars;
+
+// @NOTE: Complain when using something deprecated
+$enable-deprecation-messages: true;
+
+// @NOTE: Main colors
+$primary: vars.$primary;
+$secondary: vars.$secondary;
+
+// @NOTE: Additional theme colors (e.g. for `btn btn-<theme>`)
+$theme-colors: (
+  accent: vars.$accent,
+);
+
+//// @NOTE: Grid breakpoints
+//$grid-breakpoints: (
+//  xs: 0,
+//  sm: 576px,
+//  md: 768px,
+//  lg: 992px,
+//  xl: 1200px,
+//);
+
+//// @NOTE: Grid containers
+//$container-max-widths: (
+//  sm: 540px,
+//  md: 720px,
+//  lg: 960px,
+//  xl: 1140px
+//);
+
+// @NOTE: Reexport Bootstrap
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pages-index">
     <section>
       <h4>Config</h4>
       <pre>{{ JSON.stringify($config, null, 2) }}</pre>
@@ -7,6 +7,21 @@
     <section>
       <h4>Component</h4>
       <Test :item="item" />
+    </section>
+    <section>
+      <h4>Styles</h4>
+      <div>
+        <span>Primary color:</span>
+        <span class="color-block primary"></span>
+      </div>
+      <div>
+        <span>Secondary color:</span>
+        <span class="color-block secondary"></span>
+      </div>
+      <div>
+        <span>Bootstrap blue color:</span>
+        <span class="color-block bootstrap-blue"></span>
+      </div>
     </section>
   </div>
 </template>
@@ -47,3 +62,23 @@
     },
   });
 </script>
+
+<style lang="scss" scoped>
+  @use "~@/assets/vars" as vars;
+  @use "~@/assets/plugins/bootstrap/vars" as bvars;
+  .color-block {
+    display: inline-block;
+    vertical-align: middle;
+    width: 3em;
+    height: 1em;
+  }
+  .color-block.primary {
+    background-color: vars.$primary;
+  }
+  .color-block.secondary {
+    background-color: vars.$secondary;
+  }
+  .color-block.bootstrap-blue {
+    background-color: bvars.$blue;
+  }
+</style>

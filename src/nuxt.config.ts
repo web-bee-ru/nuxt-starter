@@ -52,6 +52,8 @@ const config: NuxtConfig = {
       },
     ],
   },
+
+  css: ['~/assets/main.scss'],
 };
 
 export default config;
