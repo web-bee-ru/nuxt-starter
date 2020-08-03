@@ -39,6 +39,7 @@
   export default defineComponent({
     components: { Test },
     async asyncData(ctx): Promise<AsyncData> {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       return { b: 3 };
     },
     data() {
@@ -55,10 +56,12 @@
       return { item };
     },
     mounted() {
+      /* eslint-disable no-console */
       console.log(process.env.NODE_ENV);
       if (process.env.NODE_ENV === 'development') {
         console.log('You are in development mode');
       }
+      /* eslint-enable no-console */
     },
   });
 </script>

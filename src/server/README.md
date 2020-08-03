@@ -3,11 +3,12 @@ This directory should contain Nuxt server extensions, e.g. server middleware.
 **IMPORTANT**: All necessary files for server extensions should either be in this directory, or imported from `node_modules`.
 
 Example:
+
 ```ts
 // ~/server/lib/utils.ts
 export default function randomNumber() {
   return Math.random();
-};
+}
 ```
 
 ```ts

@@ -138,6 +138,7 @@
 # Build
 
 Features:
+
 - TypeScript support everywhere, including Nuxt config and server middleware.
   Source code lives inside `./src`.
 - Production does not depend on TypeScript and other build-time dependencies.
@@ -145,12 +146,14 @@ Features:
   During start, `srcDir` is chosen based on location of Nuxt config.
 
 With Docker:
+
 1. Produce `.env` file (optional).
 2. Build with `docker build` ([docs](https://docs.docker.com/engine/reference/commandline/build/)).
 3. Deliver docker image to production.
-3. Start with `docker-compose` ([docs](https://docs.docker.com/compose/)) or `docker run` ([docs](https://docs.docker.com/engine/reference/run/)).
+4. Start with `docker-compose` ([docs](https://docs.docker.com/compose/)) or `docker run` ([docs](https://docs.docker.com/engine/reference/run/)).
 
 Without Docker:
+
 1. Produce `.env` file (optional).
 2. Build with `npm ci && npm run build`.
 3. Deliver files to production:
