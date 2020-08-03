@@ -9,8 +9,12 @@
     "build": "shx rm -rf ./build && tsc -p ./tsconfig.build.json && nuxt-ts build -c ./src/nuxt.config.ts",
     "start": "nuxt-start -c ./build/nuxt.config.js",
     "generate:api": "taxios-generate https://petstore.swagger.io/v2/swagger.json -o ./types/generated/PetStore.ts -e PetStore",
-    "lint": "prettier --check . && eslint --ext .ts,.js,.vue .",
-    "lint:fix": "prettier --write . && eslint --fix --ext .ts,.js,.vue ."
+    "lint": "run-s lint:prettier lint:eslint",
+    "fix": "run-s fix:prettier fix:eslint",
+    "lint:prettier": "prettier --check .",
+    "fix:prettier": "prettier --write .",
+    "lint:eslint": "eslint --ext .ts,.js,.vue .",
+    "fix:eslint": "eslint --ext .ts,.js,.vue . --fix"
   },
   "license": "ISC",
   "dependencies": {
@@ -29,6 +33,7 @@
     "@simplesmiler/taxios-generate": "^0.1.4",
     "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.11.0",
+    "npm-run-all": "^4.1.5",
     "nuxt": "^2.14.0",
     "prettier": "^2.0.5",
     "sass": "^1.26.10",
