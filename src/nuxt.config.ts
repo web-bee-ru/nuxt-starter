@@ -6,7 +6,7 @@ const NUXT_MODE = process.env.NUXT_MODE || 'universal';
 const HOST = process.env.HOST || '0.0.0.0';
 const PORT = process.env.PORT || 3000;
 
-const APP_BASE_URL = process.env.APP_ROUTER_BASE_URL || '/';
+const APP_BASE_URL = process.env.APP_BASE_URL || '/';
 
 const config: NuxtConfig = {
   buildModules: ['@nuxt/typescript-build', 'nuxt-composition-api', '@nuxtjs/axios'],
