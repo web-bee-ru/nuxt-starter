@@ -1,3 +1,6 @@
+# Static files
+/src/static
+
 # Build artifacts
 /.nuxt
 /build
