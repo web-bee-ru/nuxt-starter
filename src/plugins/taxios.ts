@@ -7,18 +7,25 @@ import { Taxios } from '@simplesmiler/taxios';
 import { PetStore } from '~/types/generated/PetStore';
 
 declare module 'vue/types/vue' {
+  // @NOTE: this.$taxios inside Vue components
   export interface Vue {
     $taxios: Taxios<PetStore>;
   }
 }
 
 declare module '@nuxt/types' {
+  // @NOTE: nuxtContext.app.$taxios inside asyncData, plugins, middleware
+  export interface NuxtAppOptions {
+    $taxios: Taxios<PetStore>;
+  }
+  // @NOTE: nuxtContext.$taxios inside asyncData, plugins, middleware
   export interface Context {
     $taxios: Taxios<PetStore>;
   }
 }
 
 declare module 'vuex/types/index' {
+  // @NOTE: this.$taxios inside vuex
   export interface Store<S> {
     $taxios: Taxios<PetStore>;
   }
