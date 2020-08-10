@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 const APP_BASE_URL = process.env.APP_BASE_URL || '/';
 
 const config: NuxtConfig = {
-  buildModules: ['@nuxt/typescript-build', 'nuxt-composition-api', '@nuxtjs/axios'],
+  buildModules: ['@nuxt/typescript-build', 'nuxt-composition-api', '@nuxtjs/axios', 'cookie-universal-nuxt'],
 
   mode: parseNuxtMode(NUXT_MODE),
 
@@ -40,7 +40,7 @@ const config: NuxtConfig = {
 
   // @NOTE: Build-time environment variables, can be read as `process.env.<NAME>`
   env: {
-    // Example: `DEBUG_ENABLED: process.env.DEBUG_ENABLED || 'false'`,
+    // Example: `DEBUG_ENABLED: process.env.DEBUG_ENABLED || 'false',`
   },
 
   css: ['~/assets/main.scss'],
