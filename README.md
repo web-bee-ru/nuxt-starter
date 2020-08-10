@@ -4,11 +4,12 @@
 2. Install dependencies: `npm i`.
 3. Start developing: `npm run dev`.
 
-# Prettier, Eslint, EditorConfig
+# Prettier, Eslint, Stylelint, EditorConfig
 
 1. Turn on "Run on save for files:" under Settings > Languages & Frameworks > JavaScript > Prettier. Make sure that `.ts` and `.vue` are included.
 2. Turn on "Automatic ESLint configuration" under Settings > Languages & Frameworks > JavaScript > Code Quality Tools > ESLint.
-3. EditorConfig is enabled by default.
+3. Turn on "Enable" and "Process JS files" under Settings > Languages & Frameworks > Style Sheets > Stylelint.
+4. EditorConfig is enabled by default.
 
 # TypeScript and Vue
 
