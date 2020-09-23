@@ -1,6 +1,6 @@
 # Nuxt starter project
 
-1. Use WebStorm 2020.1.
+1. Use WebStorm 2020.2.1+.
 2. Install dependencies: `npm i`.
 3. Start developing: `npm run dev`.
 
@@ -183,5 +183,5 @@ Without Docker:
 2. Type checking and auto-completion is not supported inside template section, neither in IDE nor during compilation.
    - Waiting for https://github.com/znck/vue-developer-experience
 3. Vue 2 composition API has some limitations: https://github.com/vuejs/composition-api#limitations.
-4. WebStorm 2020.2 has an issue with augmentation of Nuxt/Vue context, see https://youtrack.jetbrains.com/issue/WEB-46669.
-5. Vuelidate does not have Composition API + TypeScript support yet, see https://github.com/vuelidate/vuelidate/issues/684.
+4. Vuelidate does not have Composition API + TypeScript support yet, see https://github.com/vuelidate/vuelidate/issues/684.
+
