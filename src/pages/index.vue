@@ -47,7 +47,7 @@
       },
     },
     watch: {
-      name: {
+      exampleStoreData: {
         immediate: true,
         handler() {
           console.info(this.exampleStoreData);
