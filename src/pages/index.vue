@@ -42,15 +42,15 @@
       return withCustomFields<AsyncData>()({ a: 2 });
     },
     computed: {
-      name() {
-        return this.$accessor.test.firstName;
+      exampleStoreData() {
+        return this.$accessor.example.data;
       },
     },
     watch: {
       name: {
         immediate: true,
         handler() {
-          console.info(this.name);
+          console.info(this.exampleStoreData);
         },
       },
     },
