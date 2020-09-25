@@ -25,6 +25,7 @@ const config: NuxtConfig = {
 
   router: {
     base: APP_BASE_URL,
+    middleware: ['example'],
   },
 
   plugins: ['~/plugins/taxios'],
