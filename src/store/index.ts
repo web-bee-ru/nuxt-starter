@@ -1,4 +1,5 @@
 import { getAccessorType } from 'typed-vuex';
+
 import * as example from '~/store/example';
 
 export const accessorType = getAccessorType({

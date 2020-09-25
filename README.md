@@ -184,4 +184,3 @@ Without Docker:
    - Waiting for https://github.com/znck/vue-developer-experience
 3. Vue 2 composition API has some limitations: https://github.com/vuejs/composition-api#limitations.
 4. Vuelidate does not have Composition API + TypeScript support yet, see https://github.com/vuelidate/vuelidate/issues/684.
-

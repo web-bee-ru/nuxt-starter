@@ -34,7 +34,7 @@
   type AsyncData = { b: number };
   export default defineComponent({
     components: { Test },
-    async asyncData(ctx): Promise<AsyncData> {
+    async asyncData(_ctx): Promise<AsyncData> {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       return { b: 3 };
     },
