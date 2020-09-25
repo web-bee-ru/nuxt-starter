@@ -1,6 +1,6 @@
+import { NuxtConfig } from '@nuxt/types';
 import path from 'path';
 import process from 'process';
-import { NuxtConfig } from '@nuxt/types';
 
 const NUXT_MODE = process.env.NUXT_MODE || 'universal';
 const HOST = process.env.HOST || '0.0.0.0';
@@ -9,7 +9,13 @@ const PORT = process.env.PORT || 3000;
 const APP_BASE_URL = process.env.APP_BASE_URL || '/';
 
 const config: NuxtConfig = {
-  buildModules: ['@nuxt/typescript-build', 'nuxt-composition-api', '@nuxtjs/axios', 'cookie-universal-nuxt'],
+  buildModules: [
+    '@nuxt/typescript-build',
+    'nuxt-composition-api',
+    '@nuxtjs/axios',
+    'cookie-universal-nuxt',
+    'nuxt-typed-vuex',
+  ],
 
   mode: parseNuxtMode(NUXT_MODE),
 

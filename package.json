@@ -24,6 +24,7 @@
     "core-js": "^3.6.5",
     "nuxt-composition-api": "^0.11.0",
     "nuxt-start": "^2.14.0",
+    "nuxt-typed-vuex": "^0.1.21",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -33,7 +34,6 @@
     "@nuxtjs/axios": "^5.12.0",
     "@nuxtjs/eslint-config-typescript": "^2.1.0",
     "@simplesmiler/taxios-generate": "^0.1.4",
-    "@trivago/prettier-plugin-sort-imports": "^1.2.0",
     "bootstrap": "^4.5.0",
     "cookie-universal-nuxt": "^2.1.4",
     "eslint": "^7.5.0",
