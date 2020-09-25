@@ -22,5 +22,25 @@ module.exports = {
         pathGroupsExcludedImportTypes: ['builtin'],
       },
     ],
+
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          // @NOTE: IDE почему-то пытается брать PropType из неправильного пакета. Как это обойти другим путём - не понятно
+          {
+            name: 'vue',
+            importNames: ['PropType'],
+            message: 'Use: "import { PropType } from \'nuxt-composition-api\';"',
+          },
+          // @NOTE: IDE почему-то пытается брать PropType из неправильного пакета. Как это обойти другим путём - не понятно
+          {
+            name: 'vue/types/umd',
+            importNames: ['PropType'],
+            message: 'Use: "import { PropType } from \'nuxt-composition-api\';"',
+          },
+        ],
+      },
+    ],
   },
 };
