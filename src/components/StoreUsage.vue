@@ -5,8 +5,7 @@
 </template>
 
 <script lang="ts">
-  import { computed } from '@vue/composition-api';
-  import { defineComponent } from 'nuxt-composition-api';
+  import { computed, defineComponent } from '@nuxtjs/composition-api';
 
   import { example } from '~/store';
 

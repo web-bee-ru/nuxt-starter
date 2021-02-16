@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, PropType, ref } from 'nuxt-composition-api';
+  import { defineComponent, PropType, ref } from '@nuxtjs/composition-api';
 
   import { Item } from '~/types';
 

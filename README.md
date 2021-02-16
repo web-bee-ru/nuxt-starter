@@ -16,7 +16,7 @@
 1. SFC should be annotated with `<script lang="ts">`, default export should be wrapped in `defineComponent`.
    ```
    <script lang="ts">
-     import { defineComponent } from 'nuxt-composition-api';
+     import { defineComponent } from '@nuxtjs/composition-api';
      export default defineComponent({
        // ...
      });

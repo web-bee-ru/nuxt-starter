@@ -7,6 +7,6 @@
 
 <script lang="ts">
   import { NuxtError } from '@nuxt/types';
-  import { defineComponent, PropType } from 'nuxt-composition-api';
+  import { defineComponent, PropType } from '@nuxtjs/composition-api';
   export default defineComponent({ props: { error: { type: Object as PropType<NuxtError>, required: true } } });
 </script>

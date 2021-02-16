@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 const APP_BASE_URL = process.env.APP_BASE_URL || '/';
 
 const config: NuxtConfig = {
-  buildModules: ['@nuxt/typescript-build', 'nuxt-composition-api', '@nuxtjs/axios', 'cookie-universal-nuxt'],
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api', '@nuxtjs/axios', 'cookie-universal-nuxt'],
 
   ssr: NUXT_SSR === 'true',
 

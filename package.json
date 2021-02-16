@@ -20,9 +20,9 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@nuxtjs/composition-api": "^0.20.1",
     "@simplesmiler/taxios": "^0.2.6",
     "core-js": "^3.8.3",
-    "nuxt-composition-api": "^0.11.0",
     "nuxt-start": "^2.14.12",
     "vue": "^2.6.12"
   },

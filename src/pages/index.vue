@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'nuxt-composition-api';
+  import { defineComponent } from '@nuxtjs/composition-api';
 
   import StoreUsage from '~/components/StoreUsage.vue';
   import Test from '~/components/Test.vue';
