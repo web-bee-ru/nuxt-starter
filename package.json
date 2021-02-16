@@ -24,7 +24,8 @@
     "@simplesmiler/taxios": "^0.2.6",
     "core-js": "^3.8.3",
     "nuxt-start": "^2.14.12",
-    "vue": "^2.6.12"
+    "vue": "^2.6.12",
+    "vue-toasted": "^1.1.28"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.12",
@@ -50,6 +51,7 @@
     "stylelint-prettier": "^1.1.2",
     "stylelint-scss": "^3.19.0",
     "typescript": "^4.1.5",
+    "vue-demi": "^0.6.0",
     "vuex-module-decorators": "^1.0.1"
   }
 }

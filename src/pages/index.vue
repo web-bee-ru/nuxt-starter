@@ -14,6 +14,10 @@
       <pre>{{ exampleStoreData }}</pre>
     </section>
     <section>
+      <h4>Sample crash</h4>
+      <button @click="throwUncaught">Crash app</button>
+    </section>
+    <section>
       <h4>Styles</h4>
       <div>
         <span>Primary color:</span>
@@ -71,6 +75,11 @@
       if (process.env.NODE_ENV === 'development') {
         console.info('You are in development mode');
       }
+    },
+    methods: {
+      throwUncaught() {
+        throw new Error('This is uncaught');
+      },
     },
   });
 </script>
