@@ -11,6 +11,4 @@ module.exports = {
   vueIndentScriptAndStyle: true,
   htmlWhitespaceSensitivity: 'ignore',
   endOfLine: 'lf',
-  importOrder: ['^[~.]'],
-  importOrderSeparation: true,
 };
