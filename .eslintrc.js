@@ -9,6 +9,9 @@ module.exports = {
     // @NOTE: We can rely on hoisting
     'no-use-before-define': ['error', { functions: false, classes: false }],
 
+    // @NOTE: some of logs are okay
+    'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
+
     // @NOTE: simple-import-sort requires to turn off other import-related sorting rules
     'sort-imports': 'off',
     'import/order': 'off',

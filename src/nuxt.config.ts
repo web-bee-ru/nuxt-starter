@@ -2,22 +2,16 @@ import { NuxtConfig } from '@nuxt/types';
 import path from 'path';
 import process from 'process';
 
-const NUXT_MODE = process.env.NUXT_MODE || 'universal';
+const NUXT_SSR = process.env.NUXT_SSR || 'false';
 const HOST = process.env.HOST || '0.0.0.0';
 const PORT = process.env.PORT || 3000;
 
 const APP_BASE_URL = process.env.APP_BASE_URL || '/';
 
 const config: NuxtConfig = {
-  buildModules: [
-    '@nuxt/typescript-build',
-    'nuxt-composition-api',
-    '@nuxtjs/axios',
-    'cookie-universal-nuxt',
-    'nuxt-typed-vuex',
-  ],
+  buildModules: ['@nuxt/typescript-build', 'nuxt-composition-api', '@nuxtjs/axios', 'cookie-universal-nuxt'],
 
-  mode: parseNuxtMode(NUXT_MODE),
+  ssr: NUXT_SSR === 'true',
 
   srcDir: getNuxtConfigDir(),
 
@@ -54,13 +48,6 @@ const config: NuxtConfig = {
 };
 
 export default config;
-
-// === //
-
-function parseNuxtMode(raw: string | undefined): NuxtConfig['mode'] {
-  if (raw === 'spa' || raw === 'universal' || raw === undefined) return raw;
-  throw new Error(`Unexpected NUXT_MODE value: ${JSON.stringify(raw)}. Expected 'spa', 'universal' or undefined.`);
-}
 
 // @DOC: Return relative directory from root to the Nuxt config directory.
 //       Necessary due to our build goals (TS in dev, JS in build & start).

@@ -9,6 +9,11 @@
       <Test :item="item" />
     </section>
     <section>
+      <h4>Store usage</h4>
+      <StoreUsage />
+      <pre>{{ exampleStoreData }}</pre>
+    </section>
+    <section>
       <h4>Styles</h4>
       <div>
         <span>Primary color:</span>
@@ -29,12 +34,14 @@
 <script lang="ts">
   import { defineComponent } from 'nuxt-composition-api';
 
+  import StoreUsage from '~/components/StoreUsage.vue';
   import Test from '~/components/Test.vue';
   import { withCustomFields } from '~/lib/utils';
+  import { example } from '~/store';
   import { Item } from '~/types';
   type AsyncData = { b: number };
   export default defineComponent({
-    components: { Test },
+    components: { StoreUsage, Test },
     setup() {
       const item: Item = { firstName: 'John', lastName: 'Goodman' };
       return { item };
@@ -48,7 +55,7 @@
     },
     computed: {
       exampleStoreData() {
-        return this.$accessor.example.data;
+        return { clickCount: example.count };
       },
     },
     watch: {
@@ -64,7 +71,6 @@
       if (process.env.NODE_ENV === 'development') {
         console.info('You are in development mode');
       }
-      this.$accessor.example.setData('updated example data');
     },
   });
 </script>

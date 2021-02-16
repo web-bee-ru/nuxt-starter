@@ -1,21 +1,22 @@
-import { getAccessorType } from 'typed-vuex';
+// @NOTE: должен быть перед импортом всех сторов
+import './_config';
 
-import * as example from '~/store/example';
+import { Store } from 'vuex';
+import { getModule } from 'vuex-module-decorators';
 
-export const accessorType = getAccessorType({
-  modules: {
-    example,
-  },
-});
+import ExampleStore from './example';
 
-declare module 'vue/types/vue' {
-  interface Vue {
-    $accessor: typeof accessorType;
-  }
+// eslint-disable-next-line import/no-mutable-exports
+let example: ExampleStore;
+
+function initialiseStores(store: Store<any>): void {
+  example = getModule(ExampleStore, store);
 }
 
-declare module '@nuxt/types' {
-  interface NuxtAppOptions {
-    $accessor: typeof accessorType;
-  }
-}
+const initializer = (store: Store<any>) => initialiseStores(store);
+const plugins = [initializer];
+
+export {
+  example,
+  plugins, // @NOTE: required by nuxt
+};

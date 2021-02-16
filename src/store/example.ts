@@ -1,24 +1,20 @@
-import { actionTree, getterTree, mutationTree } from 'nuxt-typed-vuex';
+import { Action, Module, Mutation, VuexModule } from 'vuex-module-decorators';
 
-export const state = () => ({
-  data: 'example',
-});
+@Module({
+  name: 'example', // @NOTE: same as filename
+  namespaced: true,
+  stateFactory: true,
+})
+export default class StoreClass extends VuexModule {
+  count: number = 0;
 
-export const getters = getterTree(state, {
-  getData: (state) => `Data from getter: ${state.data}`,
-});
+  @Mutation
+  incremented(v = 1) {
+    this.count += v;
+  }
 
-export const mutations = mutationTree(state, {
-  dataChanged(state, newValue: string) {
-    state.data = newValue;
-  },
-});
-
-export const actions = actionTree(
-  { state, getters, mutations },
-  {
-    setData({ commit }, newData: string) {
-      commit('dataChanged', newData);
-    },
-  },
-);
+  @Action
+  async increment(extra: number) {
+    this.incremented(extra);
+  }
+}
