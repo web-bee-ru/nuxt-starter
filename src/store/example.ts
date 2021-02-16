@@ -1,4 +1,4 @@
-import { getterTree, mutationTree, actionTree } from 'nuxt-typed-vuex';
+import { actionTree, getterTree, mutationTree } from 'nuxt-typed-vuex';
 
 export const state = () => ({
   data: 'example',

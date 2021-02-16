@@ -28,12 +28,17 @@
 
 <script lang="ts">
   import { defineComponent } from 'nuxt-composition-api';
+
   import Test from '~/components/Test.vue';
   import { withCustomFields } from '~/lib/utils';
   import { Item } from '~/types';
   type AsyncData = { b: number };
   export default defineComponent({
     components: { Test },
+    setup() {
+      const item: Item = { firstName: 'John', lastName: 'Goodman' };
+      return { item };
+    },
     async asyncData(_ctx): Promise<AsyncData> {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       return { b: 3 };
@@ -53,10 +58,6 @@
           console.info(this.exampleStoreData);
         },
       },
-    },
-    setup() {
-      const item: Item = { firstName: 'John', lastName: 'Goodman' };
-      return { item };
     },
     mounted() {
       console.info(process.env.NODE_ENV);
