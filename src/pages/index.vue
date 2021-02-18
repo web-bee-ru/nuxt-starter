@@ -9,6 +9,15 @@
       <Test :item="item" />
     </section>
     <section>
+      <h4>Store usage</h4>
+      <StoreUsage />
+      <pre>{{ exampleStoreData }}</pre>
+    </section>
+    <section>
+      <h4>Sample crash</h4>
+      <button @click="throwUncaught">Crash app</button>
+    </section>
+    <section>
       <h4>Styles</h4>
       <div>
         <span>Primary color:</span>
@@ -27,41 +36,50 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'nuxt-composition-api';
+  import { defineComponent } from '@nuxtjs/composition-api';
+
+  import StoreUsage from '~/components/StoreUsage.vue';
   import Test from '~/components/Test.vue';
-  import { Item } from '~/types';
   import { withCustomFields } from '~/lib/utils';
-
-  type AsyncData = {
-    b: number;
-  };
-
+  import { example } from '~/store';
+  import { Item } from '~/types';
+  type AsyncData = { b: number };
   export default defineComponent({
-    components: { Test },
-    async asyncData(ctx): Promise<AsyncData> {
+    components: { StoreUsage, Test },
+    setup() {
+      const item: Item = { firstName: 'John', lastName: 'Goodman' };
+      return { item };
+    },
+    async asyncData(_ctx): Promise<AsyncData> {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       return { b: 3 };
     },
     data() {
-      return withCustomFields<AsyncData>()({
-        a: 2,
-      });
+      return withCustomFields<AsyncData>()({ a: 2 });
     },
-    setup() {
-      const item: Item = {
-        firstName: 'John',
-        lastName: 'Goodman',
-      };
-
-      return { item };
+    computed: {
+      exampleStoreData() {
+        return { clickCount: example.count };
+      },
+    },
+    watch: {
+      exampleStoreData: {
+        immediate: true,
+        handler() {
+          console.info(this.exampleStoreData);
+        },
+      },
     },
     mounted() {
-      /* eslint-disable no-console */
-      console.log(process.env.NODE_ENV);
+      console.info(process.env.NODE_ENV);
       if (process.env.NODE_ENV === 'development') {
-        console.log('You are in development mode');
+        console.info('You are in development mode');
       }
-      /* eslint-enable no-console */
+    },
+    methods: {
+      throwUncaught() {
+        throw new Error('This is uncaught');
+      },
     },
   });
 </script>

@@ -6,7 +6,8 @@
 </template>
 
 <script lang="ts">
-  import { ref, defineComponent, PropType } from 'nuxt-composition-api';
+  import { defineComponent, PropType, ref } from '@nuxtjs/composition-api';
+
   import { Item } from '~/types';
 
   export default defineComponent({
@@ -18,6 +19,13 @@
       content: { type: [Array, Object] as PropType<Item | Item[]> },
       formatter: { type: [Function] as PropType<(item: Item) => string> },
     },
+    setup() {
+      const count = ref(0);
+      const increment = () => {
+        count.value += 1;
+      };
+      return { count, increment };
+    },
     computed: {
       greetings(): string {
         if (this.item) {
@@ -26,15 +34,6 @@
           return `Hello, stranger!`;
         }
       },
-    },
-    setup() {
-      const count = ref(0);
-
-      const increment = () => {
-        count.value += 1;
-      };
-
-      return { count, increment };
     },
   });
 </script>

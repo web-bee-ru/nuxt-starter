@@ -6,14 +6,7 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, PropType } from 'nuxt-composition-api';
   import { NuxtError } from '@nuxt/types';
-  export default defineComponent({
-    props: {
-      error: {
-        type: Object as PropType<NuxtError>,
-        required: true,
-      },
-    },
-  });
+  import { defineComponent, PropType } from '@nuxtjs/composition-api';
+  export default defineComponent({ props: { error: { type: Object as PropType<NuxtError>, required: true } } });
 </script>

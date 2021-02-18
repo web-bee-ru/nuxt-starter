@@ -13,7 +13,7 @@ export default function randomNumber() {
 
 ```ts
 // ~/server/logger.ts
-import { defineNuxtServerMiddleware } from 'nuxt-composition-api';
+import { defineNuxtServerMiddleware } from '@nuxtjs/composition-api';
 import { randomNumber } from './lib/utils';
 export default defineNuxtServerMiddleware((req, res, next) => {
   console.log(randomNumber());

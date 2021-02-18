@@ -2,8 +2,9 @@
 // @NOTE: If you need to use multiple separate APIs, you should create multiple separate Axios instances
 //        (e.g. using $axios.create), inject them and correct the type declarations.
 
-import { defineNuxtPlugin } from 'nuxt-composition-api';
+import { defineNuxtPlugin } from '@nuxtjs/composition-api';
 import { Taxios } from '@simplesmiler/taxios';
+
 import { PetStore } from '~/types/generated/PetStore';
 
 declare module 'vue/types/vue' {
