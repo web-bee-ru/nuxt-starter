@@ -25,13 +25,6 @@ declare module '@nuxt/types' {
   }
 }
 
-declare module 'vuex/types/index' {
-  // @NOTE: this.$taxios inside vuex
-  export interface Store<S> {
-    $taxios: Taxios<PetStore>;
-  }
-}
-
 export default defineNuxtPlugin((ctx, inject): void => {
   const taxios = new Taxios<PetStore>(ctx.$axios);
   inject('taxios', taxios);
