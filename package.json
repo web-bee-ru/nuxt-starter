@@ -18,6 +18,11 @@
     "lint:stylelint": "stylelint ./**/*.vue ./**/*.[s]css",
     "fix:stylelint": "stylelint ./**/*.vue ./**/*.[s]css --fix"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "license": "ISC",
   "dependencies": {
     "@nuxtjs/composition-api": "^0.20.1",
@@ -28,17 +33,20 @@
     "vue-toasted": "^1.1.28"
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
     "@nuxt/types": "^2.14.12",
     "@nuxt/typescript-build": "^2.0.4",
     "@nuxt/typescript-runtime": "^2.0.1",
     "@nuxtjs/axios": "5.13.0",
     "@nuxtjs/eslint-config-typescript": "^5.0.0",
     "@simplesmiler/taxios-generate": "^0.2.6",
+    "@web-bee-ru/commitlint-config": "^1.0.0",
     "bootstrap": "^4.6.0",
     "cookie-universal-nuxt": "^2.1.4",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^4.3.8",
     "npm-run-all": "^4.1.5",
     "nuxt": "^2.14.12",
     "prettier": "^2.2.1",
