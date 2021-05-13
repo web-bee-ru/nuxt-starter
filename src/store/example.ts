@@ -15,6 +15,6 @@ export default class StoreClass extends VuexModule {
 
   @Action
   async increment(extra: number) {
-    this.incremented(extra);
+    await this.incremented(extra);
   }
 }

@@ -1,6 +1,5 @@
-import { defineNuxtPlugin, onGlobalSetup } from '@nuxtjs/composition-api';
+import { defineNuxtPlugin, onErrorCaptured, onGlobalSetup } from '@nuxtjs/composition-api';
 import Vue from 'vue';
-import { onErrorCaptured } from 'vue-demi';
 
 /**
  * Регистрация обработки глобальных ошибок, чтобы в development режиме автоматически не сваливаться в ошибку.

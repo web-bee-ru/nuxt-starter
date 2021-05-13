@@ -47,6 +47,7 @@ RUN npm ci --production
 COPY --from=builder /srv/app/build/ ./build/
 COPY --from=builder /srv/app/.nuxt/ ./.nuxt/
 COPY --from=builder /srv/app/.env ./
+COPY --from=builder /srv/app/static/ ./static/
 
 # Start app
 CMD npm run start

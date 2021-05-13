@@ -17,5 +17,9 @@ module.exports = {
     'import/order': 'off',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+
+    // @NOTE: eslint fucks up with similar namespace and interface declarations
+    'no-redeclare': 'off',
+    '@typescript-eslint/no-redeclare': ['error'],
   },
 };
