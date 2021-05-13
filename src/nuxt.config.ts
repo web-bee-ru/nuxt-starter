@@ -45,6 +45,9 @@ const config: NuxtConfig = {
 
   srcDir: getNuxtConfigDir(),
 
+  // @NOTE: Show dev/build where the "static" dir is
+  dir: { static: '../static' },
+
   // @NOTE: Details: ~/server/README.md
   serverMiddleware: [],
 
