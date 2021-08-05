@@ -13,7 +13,8 @@
 <script lang="ts">
   import { defineComponent, useContext } from '@nuxtjs/composition-api';
 
-  import ApiProvider from '~/components/api/ApiProvider.vue';
+  import { ApiProvider } from '~/components/api';
+
   export default defineComponent({
     components: { ApiProvider },
     setup() {

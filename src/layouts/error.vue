@@ -11,7 +11,8 @@
   import { NuxtError } from '@nuxt/types';
   import { defineComponent, PropType, useContext } from '@nuxtjs/composition-api';
 
-  import ApiProvider from '~/components/api/ApiProvider.vue';
+  import { ApiProvider } from '~/components/api';
+
   export default defineComponent({
     components: { ApiProvider },
     props: { error: { type: Object as PropType<NuxtError>, required: true } },
