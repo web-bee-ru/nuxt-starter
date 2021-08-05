@@ -65,7 +65,7 @@
 # Rest API
 
 1. API typings are generated based on Swagger/OpenAPI provided by backend. See `generate:api` script inside `package.json`.
-2. Use `useApi (taxios)` instead of `$axios`. WebStorm provides auto-completion and type checking for url, body, params and query.
+2. Use `useApi` or `taxios` instead of `$axios`. WebStorm provides auto-completion and type checking for url, body, params and query.
    See [taxios docs](https://github.com/simplesmiler/taxios/tree/master/packages/taxios) for details.
 3. If you encounter an issue with generated types, you should:
    - Report about Swagger/OpenAPI issue.

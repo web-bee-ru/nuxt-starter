@@ -2,8 +2,9 @@ import { reactive } from '@nuxtjs/composition-api';
 import { InjectionKey, UnwrapRef } from '@vue/composition-api';
 import { AxiosInstance } from 'axios';
 
-import { nonStrictApi, nonStrictAxios, petsApi, petsAxios } from '~/components/api/defaults';
-import { NonStrictTaxios, PetsAxios, PetsTaxios } from '~/types/api/index';
+import { NonStrictTaxios, PetsAxios, PetsTaxios } from '~/types/api';
+
+import { nonStrictApi, nonStrictAxios, petsApi, petsAxios } from './defaults';
 
 export interface ApiContextProps {
   petsAxios: PetsAxios;
