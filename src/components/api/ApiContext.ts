@@ -1,5 +1,4 @@
-import { reactive } from '@nuxtjs/composition-api';
-import { InjectionKey, UnwrapRef } from '@vue/composition-api';
+import { InjectionKey } from '@nuxtjs/composition-api';
 import { AxiosInstance } from 'axios';
 
 import { NonStrictTaxios, PetsAxios, PetsTaxios } from '~/types/api';
@@ -13,11 +12,11 @@ export interface ApiContextProps {
   nonStrictApi: NonStrictTaxios;
 }
 
-export const defaultValue: UnwrapRef<ApiContextProps> = reactive({
+export const defaultValue: ApiContextProps = {
   petsAxios,
   petsApi,
   nonStrictAxios,
   nonStrictApi,
-});
+};
 
-export const ApiContextSymbol: InjectionKey<UnwrapRef<ApiContextProps>> = Symbol('ApiContext');
+export const ApiContextSymbol: InjectionKey<ApiContextProps> = Symbol('ApiContext');

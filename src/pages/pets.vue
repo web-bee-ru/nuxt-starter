@@ -13,12 +13,12 @@
 
   export default defineComponent({
     setup() {
-      const { petsApi } = useApi();
+      const api = useApi();
 
       const pets = ref<PetStore.Pet[] | null>(null);
 
       onMounted(() => {
-        petsApi.get('/pet/findByStatus', { query: { status: 'available' } }).then((res) => (pets.value = res.data));
+        api.petsApi.get('/pet/findByStatus', { query: { status: 'available' } }).then((res) => (pets.value = res.data));
       });
 
       return {

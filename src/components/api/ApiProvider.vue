@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { defineComponent, provide, reactive, useContext, watch } from '@nuxtjs/composition-api';
+  import { computed, defineComponent, provide, reactive, useContext } from '@nuxtjs/composition-api';
   import { Taxios } from '@simplesmiler/taxios';
 
   import { PetStore } from '~/types/generated/PetStore';
@@ -13,28 +13,26 @@
         required: true,
       },
     },
-    setup({ petsApiBaseUrl }) {
+    setup({ petsApiBaseUrl }, { slots }) {
       const { $axios } = useContext();
 
-      const petsAxios = $axios.create({
-        baseURL: petsApiBaseUrl,
-      });
-
-      const petsApi = new Taxios<PetStore>(petsAxios);
-
-      watch(
-        () => petsApiBaseUrl,
-        () => {
-          petsAxios.defaults.baseURL = petsApiBaseUrl;
-        },
+      const petsAxios = computed(() =>
+        $axios.create({
+          baseURL: petsApiBaseUrl,
+        }),
       );
 
-      const nonStrictAxios = $axios.create({
-        baseURL: '/',
-      });
+      const petsApi = computed(() => new Taxios<PetStore>(petsAxios.value));
 
-      const nonStrictApi = new Taxios<any, false>(nonStrictAxios);
+      const nonStrictAxios = computed(() =>
+        $axios.create({
+          baseURL: '/',
+        }),
+      );
 
+      const nonStrictApi = computed(() => new Taxios<any, false>(nonStrictAxios.value));
+
+      // @NOTE: Context.Provider alternative
       provide(
         ApiContextSymbol,
         reactive({
@@ -44,12 +42,13 @@
           nonStrictApi,
         }),
       );
-    },
-    render() {
-      if (!this.$slots.default) {
-        throw new Error('ApiProvider: default slot (children) is required');
-      }
-      return this.$slots.default[0];
+
+      return () => {
+        if (!slots.default) {
+          throw new Error('ApiProvider: default slot (children) is required');
+        }
+        return slots.default();
+      };
     },
   });
 </script>
