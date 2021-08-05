@@ -39,7 +39,7 @@ declare module '@nuxt/types/config/runtime' {
 }
 
 const config: NuxtConfig = {
-  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api', '@nuxtjs/axios', 'cookie-universal-nuxt'],
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api/module', '@nuxtjs/axios', 'cookie-universal-nuxt'],
 
   ssr: NUXT_SSR === 'true',
 
