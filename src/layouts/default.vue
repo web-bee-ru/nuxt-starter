@@ -1,20 +1,21 @@
 <template>
   <ApiProvider :pets-api-base-url="petsApiBaseUrl">
     <div>
-      <h4>Error</h4>
-      <pre>{{ JSON.stringify(error, null, 2) }}</pre>
+      <div class="nav">
+        <NuxtLink to="/" class="nav-link">Home</NuxtLink>
+        <NuxtLink to="/pets" class="nav-link">Pets</NuxtLink>
+      </div>
+      <Nuxt />
     </div>
   </ApiProvider>
 </template>
 
 <script lang="ts">
-  import { NuxtError } from '@nuxt/types';
-  import { defineComponent, PropType, useContext } from '@nuxtjs/composition-api';
+  import { defineComponent, useContext } from '@nuxtjs/composition-api';
 
   import ApiProvider from '~/components/api/ApiProvider.vue';
   export default defineComponent({
     components: { ApiProvider },
-    props: { error: { type: Object as PropType<NuxtError>, required: true } },
     setup() {
       const { $config } = useContext();
 
