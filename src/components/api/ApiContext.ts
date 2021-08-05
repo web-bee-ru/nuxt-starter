@@ -1,4 +1,4 @@
-import { InjectionKey } from '@nuxtjs/composition-api';
+import { InjectionKey, UnwrapRef } from '@nuxtjs/composition-api';
 import { AxiosInstance } from 'axios';
 
 import { NonStrictTaxios, PetsAxios, PetsTaxios } from '~/types/api';
@@ -19,4 +19,5 @@ export const defaultValue: ApiContextProps = {
   nonStrictApi,
 };
 
-export const ApiContextSymbol: InjectionKey<ApiContextProps> = Symbol('ApiContext');
+// @NOTE: UnwrapRef -- because reactive() breaks source type
+export const ApiContextSymbol: InjectionKey<UnwrapRef<ApiContextProps>> = Symbol('ApiContext');
