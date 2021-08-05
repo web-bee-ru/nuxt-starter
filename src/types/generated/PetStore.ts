@@ -1,32 +1,4 @@
 export namespace PetStore {
-  export interface ApiResponse {
-    code?: number;
-    type?: string;
-    message?: string;
-    [k: string]: unknown;
-  }
-  export interface Category {
-    id?: number;
-    name?: string;
-    [k: string]: unknown;
-  }
-  export interface Pet {
-    id?: number;
-    category?: PetStore.Category;
-    name: string;
-    photoUrls: string[];
-    tags?: PetStore.Tag[];
-    /**
-     * pet status in the store
-     */
-    status?: 'available' | 'pending' | 'sold';
-    [k: string]: unknown;
-  }
-  export interface Tag {
-    id?: number;
-    name?: string;
-    [k: string]: unknown;
-  }
   export interface Order {
     id?: number;
     petId?: number;
@@ -37,7 +9,21 @@ export namespace PetStore {
      */
     status?: 'placed' | 'approved' | 'delivered';
     complete?: boolean;
-    [k: string]: unknown;
+  }
+  export interface Customer {
+    id?: number;
+    username?: string;
+    address?: PetStore.Address[];
+  }
+  export interface Address {
+    street?: string;
+    city?: string;
+    state?: string;
+    zip?: string;
+  }
+  export interface Category {
+    id?: number;
+    name?: string;
   }
   export interface User {
     id?: number;
@@ -51,42 +37,54 @@ export namespace PetStore {
      * User Status
      */
     userStatus?: number;
-    [k: string]: unknown;
+  }
+  export interface Tag {
+    id?: number;
+    name?: string;
+  }
+  export interface Pet {
+    id?: number;
+    name: string;
+    category?: PetStore.Category;
+    photoUrls: string[];
+    tags?: PetStore.Tag[];
+    /**
+     * pet status in the store
+     */
+    status?: 'available' | 'pending' | 'sold';
+  }
+  export interface ApiResponse {
+    code?: number;
+    type?: string;
+    message?: string;
   }
 }
 
 export interface PetStore {
   version: '1';
   routes: {
-    '/pet/{petId}/uploadImage': {
-      POST: {
-        body?: FormData;
-        params: {
-          petId: number;
-        };
-        response: PetStore.ApiResponse;
-      };
-    };
     '/pet': {
       POST: {
-        body: PetStore.Pet;
+        body: FormData;
+        response: PetStore.Pet;
       };
       PUT: {
-        body: PetStore.Pet;
+        body: FormData;
+        response: PetStore.Pet;
       };
     };
     '/pet/findByStatus': {
       GET: {
-        query: {
-          status: ('available' | 'pending' | 'sold')[];
+        query?: {
+          status?: 'available' | 'pending' | 'sold';
         };
         response: PetStore.Pet[];
       };
     };
     '/pet/findByTags': {
       GET: {
-        query: {
-          tags: string[];
+        query?: {
+          tags?: string[];
         };
         response: PetStore.Pet[];
       };
@@ -99,9 +97,12 @@ export interface PetStore {
         response: PetStore.Pet;
       };
       POST: {
-        body?: FormData;
         params: {
           petId: number;
+        };
+        query?: {
+          name?: string;
+          status?: string;
         };
       };
       DELETE: {
@@ -110,9 +111,16 @@ export interface PetStore {
         };
       };
     };
+    '/store/inventory': {
+      GET: {
+        response: {
+          [k: string]: number;
+        };
+      };
+    };
     '/store/order': {
       POST: {
-        body: PetStore.Order;
+        body?: FormData;
         response: PetStore.Order;
       };
     };
@@ -129,22 +137,28 @@ export interface PetStore {
         };
       };
     };
-    '/store/inventory': {
-      GET: {
-        response: {
-          [k: string]: number;
-        };
-      };
-    };
-    '/user/createWithArray': {
+    '/user': {
       POST: {
-        body: PetStore.User[];
+        body?: FormData;
       };
     };
     '/user/createWithList': {
       POST: {
-        body: PetStore.User[];
+        body?: PetStore.User[];
+        response: PetStore.User;
       };
+    };
+    '/user/login': {
+      GET: {
+        query?: {
+          username?: string;
+          password?: string;
+        };
+        response: string;
+      };
+    };
+    '/user/logout': {
+      GET: {};
     };
     '/user/{username}': {
       GET: {
@@ -154,7 +168,7 @@ export interface PetStore {
         response: PetStore.User;
       };
       PUT: {
-        body: PetStore.User;
+        body?: FormData;
         params: {
           username: string;
         };
@@ -163,23 +177,6 @@ export interface PetStore {
         params: {
           username: string;
         };
-      };
-    };
-    '/user/login': {
-      GET: {
-        query: {
-          username: string;
-          password: string;
-        };
-        response: string;
-      };
-    };
-    '/user/logout': {
-      GET: {};
-    };
-    '/user': {
-      POST: {
-        body: PetStore.User;
       };
     };
   };

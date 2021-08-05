@@ -8,7 +8,7 @@
     "dev": "nuxt-ts dev -c ./src/nuxt.config.ts",
     "build": "shx rm -rf ./build && tsc -p ./tsconfig.build.json && nuxt-ts build -c ./src/nuxt.config.ts",
     "start": "nuxt-start -c ./build/nuxt.config.js",
-    "generate:api": "taxios-generate https://petstore.swagger.io/v2/swagger.json -o ./src/types/generated/PetStore.ts -e PetStore && prettier --write ./src/types/generated/PetStore.ts",
+    "generate:api": "taxios-generate https://petstore3.swagger.io/api/v3/openapi.json -o ./src/types/generated/PetStore.ts -e PetStore && prettier --write ./src/types/generated/PetStore.ts",
     "lint": "run-s -csn lint:eslint lint:stylelint lint:prettier",
     "fix": "run-s -csn fix:eslint fix:stylelint fix:prettier",
     "lint:prettier": "prettier --check .",
@@ -25,8 +25,9 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@nuxtjs/composition-api": "^0.20.1",
-    "@simplesmiler/taxios": "^0.2.6",
+    "@nuxtjs/composition-api": "^0.26.0",
+    "@simplesmiler/taxios": "^0.2.7",
+    "@vue/composition-api": "^1.0.5",
     "core-js": "^3.8.3",
     "nuxt-start": "^2.14.12",
     "vue": "^2.6.12",
@@ -37,9 +38,9 @@
     "@nuxt/types": "^2.14.12",
     "@nuxt/typescript-build": "^2.0.4",
     "@nuxt/typescript-runtime": "^2.0.1",
-    "@nuxtjs/axios": "5.13.0",
+    "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/eslint-config-typescript": "^5.0.0",
-    "@simplesmiler/taxios-generate": "^0.2.6",
+    "@simplesmiler/taxios-generate": "^0.2.7",
     "@web-bee-ru/commitlint-config": "^1.0.0",
     "bootstrap": "^4.6.0",
     "cookie-universal-nuxt": "^2.1.4",
@@ -58,7 +59,7 @@
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-scss": "^3.19.0",
-    "typescript": "^4.1.5",
+    "typescript": "^4.3.5",
     "vuex-module-decorators": "^1.0.1"
   }
 }

@@ -13,7 +13,7 @@ const environmentConfig = {
   publicRuntimeConfig: {
     // Example: `SERVICE_URL: process.env.SERVICE_URL || 'http://localhost:4000',`
     axios: {
-      baseURL: process.env.API_BASE_URL || 'https://petstore.swagger.io/v2',
+      baseURL: process.env.API_BASE_URL || 'https://petstore3.swagger.io/api/v3',
       browserBaseURL: process.env.API_BROWSER_BASE_URL,
     },
     env: (process.env.NODE_ENV || 'development') as 'production' | 'development',
@@ -39,7 +39,7 @@ declare module '@nuxt/types/config/runtime' {
 }
 
 const config: NuxtConfig = {
-  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api', '@nuxtjs/axios', 'cookie-universal-nuxt'],
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api/module', '@nuxtjs/axios', 'cookie-universal-nuxt'],
 
   ssr: NUXT_SSR === 'true',
 
@@ -62,7 +62,6 @@ const config: NuxtConfig = {
   },
 
   plugins: [
-    { src: '~/plugins/taxios', mode: 'all' },
     { src: '~/plugins/vue-toasted', mode: 'all' },
     { src: '~/plugins/prevent-dev-errors', mode: 'client' },
   ],
